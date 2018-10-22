@@ -40,6 +40,8 @@ module Transbank
                                               channel: channel,
                                               external_unique_number: external_unique_number,
                                               options: options)
+          puts "request to h\n"
+          puts create_request.to_h
           response = http_post(transaction_create_path, create_request.to_h)
           validate_create_response!(response)
           transaction_create_response = TransactionCreateResponse.new response
