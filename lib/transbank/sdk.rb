@@ -23,4 +23,3 @@ module Transbank
 end
 
 Onepay = Transbank::Onepay
-Webpay = Transbank::Webpay
