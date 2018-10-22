@@ -12,6 +12,8 @@ module Transbank
           http.use_ssl = uri.scheme == 'https'
           request = Net::HTTP::Post.new(uri.path, 'Content-Type'=> 'application/json')
           camel_cased_body = keys_to_camel_case(body)
+          puts "camel cased body \n"
+          puts camel_cased_body
           request.body = JSON.generate(camel_cased_body)
           result = http.request(request)
           JSON.parse(result.body)
